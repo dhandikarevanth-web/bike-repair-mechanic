@@ -57,13 +57,19 @@
         button:hover {
             background: #218838;
         }
+        .map {
+            margin-top: 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Bike Repair Service</h1>
-    <p>Location: Main Road, Near Bus Stand, Your City</p>
+    <p>Location: CHFH+248, Jyothi Nagar Colony, Boduppal, Secunderabad, Hyderabad, Telangana 500092</p>
 </header>
 
 <div class="container">
@@ -75,14 +81,14 @@
         <div class="bike-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Honda_Activa_6G.jpg" alt="Honda Activa">
             <h3>Honda Activa</h3>
-            <button onclick="showDetails('Activa')">Select</button>
+            <button onclick="showDetails()">Select</button>
         </div>
 
         <!-- Hero Splendor -->
         <div class="bike-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Hero_Splendor_Plus.jpg" alt="Hero Splendor">
             <h3>Hero Splendor</h3>
-            <button onclick="showDetails('Splendor')">Select</button>
+            <button onclick="showDetails()">Select</button>
         </div>
     </div>
 
@@ -106,13 +112,32 @@
         <input type="text" placeholder="Phone Number">
         <input type="text" placeholder="Address">
 
+        <h3>Online Payment (UPI)</h3>
+        <p>Pay using any UPI app:</p>
+        <p><strong>UPI ID:</strong> 7013326807@fam</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=7013326807@fam&pn=BikeService&am=1180"
+             alt="UPI QR Code">
+
         <button onclick="bookService()">Book Now</button>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map">
+        <h2>Our Location</h2>
+        <iframe
+            src="https://maps.google.com/maps?q=CHFH+248%20Jyothi%20Nagar%20Colony%20Boduppal%20Hyderabad&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
     </div>
 
 </div>
 
 <script>
-function showDetails(bike) {
+function showDetails() {
     document.getElementById("serviceDetails").style.display = "block";
 }
 
