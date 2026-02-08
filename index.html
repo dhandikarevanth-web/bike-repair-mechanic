@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quick Bike Repair</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+nav {
+    background: #e60000;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+button {
+    background: #e60000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+
+footer {
+    text-align: center;
+    background: #111;
+    color: white;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Quick Bike Repair</h1>
+    <p>Fast and reliable bike repair near you</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#request">Request Repair</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>Need Bike Repair?</h2>
+    <p>Submit your request and a mechanic will contact you.</p>
+</section>
+
+<div class="container">
+
+    <section id="request">
+        <form id="repairForm">
+            <h2>Request Bike Repair</h2>
+
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+
+            <select id="service" required>
+                <option value="">Select Problem</option>
+                <option>General Service</option>
+                <option>Engine Problem</option>
+                <option>Brake Issue</option>
+                <option>Battery Problem</option>
+                <option>Tyre Puncture</option>
+            </select>
+
+            <input type="text" id="location" placeholder="Your Location" required>
+
+            <textarea id="details" placeholder="Additional details"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <div id="confirmation"></div>
+
+    <section id="about" class="card">
+        <h2>About Us</h2>
+        <p>We connect bike owners with trusted local mechanics for fast and affordable repairs.</p>
+    </section>
+
+    <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p>Phone: +91 90000 00000</p>
+        <p>Email: quickbikerepair@gmail.com</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 Quick Bike Repair</p>
+</footer>
+
+<script>
+document.getElementById("repairForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    document.getElementById("confirmation").innerHTML = `
+        <div class="card">
+            <h3>Request Submitted</h3>
+            <p>A mechanic will contact you shortly.</p>
+        </div>
+    `;
+
+    document.getElementById("repairForm").reset();
+});
+</script>
+
+</body>
+</html>
