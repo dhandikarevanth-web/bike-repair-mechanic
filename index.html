@@ -32,7 +32,7 @@
             text-align: center;
         }
         .bike-card img {
-            width: 180px;   /* reduced size */
+            width: 180px;
             height: auto;
             border-radius: 6px;
         }
@@ -48,6 +48,15 @@
             border-radius: 8px;
             display: none;
         }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
     </style>
 </head>
 <body>
@@ -62,14 +71,16 @@
     <h2>Select Your Bike</h2>
 
     <div class="bikes">
+        <!-- Honda Activa -->
         <div class="bike-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Honda_Activa_6G.jpg" alt="Activa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Honda_Activa_6G.jpg" alt="Honda Activa">
             <h3>Honda Activa</h3>
             <button onclick="showDetails('Activa')">Select</button>
         </div>
 
+        <!-- Hero Splendor -->
         <div class="bike-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Hero_Splendor_Plus.jpg" alt="Splendor">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Hero_Splendor_Plus.jpg" alt="Hero Splendor">
             <h3>Hero Splendor</h3>
             <button onclick="showDetails('Splendor')">Select</button>
         </div>
@@ -91,9 +102,9 @@
         <p><strong>Total:</strong> ₹1180</p>
 
         <h3>Billing Details</h3>
-        <input type="text" placeholder="Revanth Yadav">
-        <input type="text" placeholder="7013326807">
-        <input type="text" placeholder="SAI BALAJI MOTORS,jyothi nagar,Boduppal,Hyderabad,Telangana">
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Phone Number">
+        <input type="text" placeholder="Address">
 
         <button onclick="bookService()">Book Now</button>
     </div>
