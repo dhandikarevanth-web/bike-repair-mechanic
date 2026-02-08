@@ -2,50 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bike Repair Mechanic</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bike Repair Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .bikes {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .bike-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 220px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .bike-card img {
+            width: 180px;   /* reduced size */
+            height: auto;
+            border-radius: 6px;
+        }
+        select, button, input {
+            padding: 8px;
+            margin: 8px 0;
+            width: 100%;
+        }
+        .details {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <h1>Bike Repair Service</h1>
-    <p>Fast • Affordable • Reliable</p>
+    <p>Location: Main Road, Near Bus Stand, Your City</p>
 </header>
 
-<section class="gallery">
-    <h2>Our Services</h2>
+<div class="container">
+
+    <h2>Select Your Bike</h2>
+
     <div class="bikes">
-        <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6" alt="Bike 1">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Bike 2">
-        <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66" alt="Bike 3">
+        <div class="bike-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Honda_Activa_6G.jpg" alt="Activa">
+            <h3>Honda Activa</h3>
+            <button onclick="showDetails('Activa')">Select</button>
+        </div>
+
+        <div class="bike-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Hero_Splendor_Plus.jpg" alt="Splendor">
+            <h3>Hero Splendor</h3>
+            <button onclick="showDetails('Splendor')">Select</button>
+        </div>
     </div>
-</section>
 
-<section class="repair">
-    <h2>Select Your Problem</h2>
-    <select id="problem" onchange="showPrice()">
-        <option value="">-- Select Issue --</option>
-        <option value="500">Puncture Repair - ₹500</option>
-        <option value="1500">Engine Service - ₹1500</option>
-        <option value="300">Oil Change - ₹300</option>
-        <option value="800">Brake Repair - ₹800</option>
-    </select>
+    <div class="details" id="serviceDetails">
+        <h2>Service Details</h2>
 
-    <div id="bill" class="bill-box"></div>
-</section>
+        <label>Select Problem:</label>
+        <select id="problem">
+            <option>General Service</option>
+            <option>Engine Issue</option>
+            <option>Brake Problem</option>
+            <option>Battery Issue</option>
+        </select>
 
-<section class="location">
-    <h2>Our Location</h2>
-    <p>SAI BALAJI MOTORS, Main Road, Hyderabad</p>
-    <iframe 
-        src="https://maps.google.com/maps?q=Hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed">
-    </iframe>
-</section>
+        <p><strong>Service Price:</strong> ₹1000</p>
+        <p><strong>GST (18%):</strong> ₹180</p>
+        <p><strong>Total:</strong> ₹1180</p>
 
-<footer>
-    <p>Contact: 9876543210</p>
-</footer>
+        <h3>Billing Details</h3>
+        <input type="text" placeholder="Revanth Yadav">
+        <input type="text" placeholder="7013326807">
+        <input type="text" placeholder="SAI BALAJI MOTORS,jyothi nagar,Boduppal,Hyderabad,Telangana">
 
-<script src="script.js"></script>
+        <button onclick="bookService()">Book Now</button>
+    </div>
+
+</div>
+
+<script>
+function showDetails(bike) {
+    document.getElementById("serviceDetails").style.display = "block";
+}
+
+function bookService() {
+    alert("Your service has been booked successfully!");
+}
+</script>
+
 </body>
 </html>
